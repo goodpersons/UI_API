@@ -17,13 +17,17 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: postgres
+  password: 123456
+  host: localhost
+  port: 5432
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: ui_development
+  database: ui_api_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,6 +59,10 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+# 翻译结果
+# 警告：定义为“test”的数据库将被删除并
+# 当你运行“rake”时从你的开发数据库重新生成。
+# 不要将此数据库设置为与开发或生产相同。
 test:
   <<: *default
   database: ui_test
