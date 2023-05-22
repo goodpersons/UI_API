@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   # protect_from_forgery prepend: true, with: :exception
   include JWTSessions::RailsAuthorization
-  # rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
+  rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
 
   private
 
